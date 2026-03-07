@@ -1,0 +1,20 @@
+[
+  {
+    "id": "res_001",
+    "name": "Jordan Smith",
+    "raw_text": "Recent CS grad with experience in Java, HTML, and basic CSS. Built a weather app using Vanilla JS. Familiar with Git version control.",
+    "current_skills": ["Java", "HTML", "CSS", "JavaScript"]
+  },
+  {
+    "id": "res_002",
+    "name": "Alex Johnson",
+    "raw_text": "Python developer with 2 years experience. Worked with Django, Flask, and PostgreSQL. Basic knowledge of data analysis with pandas.",
+    "current_skills": ["Python", "Django", "Flask", "PostgreSQL", "pandas"]
+  },
+  {
+    "id": "res_003",
+    "name": "Sam Williams",
+    "raw_text": "Frontend developer specializing in React and TypeScript. Experience with state management using Redux and Zustand. Familiar with testing using Jest and React Testing Library.",
+    "current_skills": ["React", "TypeScript", "Redux", "Zustand", "Jest"]
+  }
+]

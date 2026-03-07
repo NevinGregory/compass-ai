@@ -1,0 +1,26 @@
+[
+  {
+    "id": "role_frontend_01",
+    "role_title": "Frontend Developer",
+    "required_skills": ["React", "TypeScript", "Tailwind CSS", "Next.js", "Testing Library"],
+    "description": "Building modern, responsive user interfaces with cutting-edge web technologies"
+  },
+  {
+    "id": "role_backend_01",
+    "role_title": "Backend Developer",
+    "required_skills": ["Node.js", "Express", "PostgreSQL", "Redis", "Docker"],
+    "description": "Designing scalable server-side applications and APIs"
+  },
+  {
+    "id": "role_data_science_01",
+    "role_title": "Data Scientist",
+    "required_skills": ["Python", "Machine Learning", "Pandas", "TensorFlow", "SQL"],
+    "description": "Analyzing data and building predictive models"
+  },
+  {
+    "id": "role_devops_01",
+    "role_title": "DevOps Engineer",
+    "required_skills": ["AWS", "Kubernetes", "Terraform", "CI/CD", "Linux"],
+    "description": "Managing cloud infrastructure and deployment pipelines"
+  }
+]
