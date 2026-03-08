@@ -1,4 +1,4 @@
-import OpenAI from 'openai'
+import { GoogleGenerativeAI } from '@google/generative-ai'
 
 interface ExtractedSkills {
   languages: string[]
@@ -10,37 +10,38 @@ export async function extractSkillsWithAI(
   resumeText: string,
   targetRole: string
 ): Promise<ExtractedSkills> {
-  const openai = new OpenAI({
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-    dangerouslyAllowBrowser: true
-  })
+  const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY)
 
-  try {
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
-      messages: [
-        {
-          role: 'system',
-          content: `You are a technical recruiter. Analyze the resume and extract skills, categorizing them into:
+  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' })
+
+  const prompt = `You are a technical recruiter. Analyze the resume and extract skills, categorizing them into:
 - Languages (programming languages)
 - Tools (development tools, platforms)
 - Frameworks (libraries, frameworks)
 
-Return ONLY a JSON object with these three arrays.`
-        },
-        {
-          role: 'user',
-          content: `Analyze this resume for a ${targetRole} role:\n\n${resumeText}`
-        }
-      ],
-      response_format: { type: 'json_object' }
-    })
+Analyze this resume for a ${targetRole} role:
 
-    const result = JSON.parse(completion.choices[0].message.content || '{}')
+${resumeText}
+
+Return ONLY a JSON object with these three arrays. Format:
+{"languages": [...], "tools": [...], "frameworks": [...]}`
+
+  try {
+    const result = await model.generateContent(prompt)
+    const response = result.response
+    const text = response.text()
+
+    // Extract JSON from the response (handle potential markdown code blocks)
+    const jsonMatch = text.match(/\{[\s\S]*\}/)
+    if (!jsonMatch) {
+      throw new Error('No valid JSON found in response')
+    }
+
+    const parsed = JSON.parse(jsonMatch[0])
     return {
-      languages: result.languages || [],
-      tools: result.tools || [],
-      frameworks: result.frameworks || []
+      languages: parsed.languages || [],
+      tools: parsed.tools || [],
+      frameworks: parsed.frameworks || []
     }
   } catch (error) {
     console.error('AI extraction failed:', error)

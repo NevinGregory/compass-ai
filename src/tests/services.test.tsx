@@ -90,7 +90,7 @@ describe('Analysis Service', () => {
     // Mock missing API key
     vi.stubGlobal('import.meta', {
       env: {
-        VITE_OPENAI_API_KEY: undefined
+        VITE_GEMINI_API_KEY: undefined
       }
     })
 

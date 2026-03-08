@@ -1,3 +1,6 @@
+## Video 
+https://youtu.be/fWLzEembqGI
+
 ## Candidate Name
 Nevin Gregory
 
