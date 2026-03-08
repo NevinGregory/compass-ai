@@ -22,5 +22,53 @@
     "role_title": "DevOps Engineer",
     "required_skills": ["AWS", "Kubernetes", "Terraform", "CI/CD", "Linux"],
     "description": "Managing cloud infrastructure and deployment pipelines"
+  },
+  {
+    "id": "role_fullstack_01",
+    "role_title": "Full Stack Developer",
+    "required_skills": ["React", "Node.js", "TypeScript", "PostgreSQL", "Git"],
+    "description": "End-to-end application development spanning frontend and backend systems"
+  },
+  {
+    "id": "role_mobile_01",
+    "role_title": "Mobile Developer",
+    "required_skills": ["React Native", "JavaScript", "iOS", "Android", "REST APIs"],
+    "description": "Building cross-platform mobile applications for iOS and Android"
+  },
+  {
+    "id": "role_uxdesigner_01",
+    "role_title": "UX Designer",
+    "required_skills": ["Figma", "User Research", "Prototyping", "Wireframing", "Usability Testing"],
+    "description": "Creating intuitive user experiences through research-driven design"
+  },
+  {
+    "id": "role_productmgr_01",
+    "role_title": "Product Manager",
+    "required_skills": ["Agile", "Data Analysis", "Roadmapping", "Stakeholder Management", "A/B Testing"],
+    "description": "Defining product strategy and coordinating cross-functional teams"
+  },
+  {
+    "id": "role_security_01",
+    "role_title": "Security Engineer",
+    "required_skills": ["Network Security", "Cryptography", "Penetration Testing", "SIEM", "Python"],
+    "description": "Protecting systems and data from security threats and vulnerabilities"
+  },
+  {
+    "id": "role_cloudarch_01",
+    "role_title": "Cloud Architect",
+    "required_skills": ["AWS", "Azure", "GCP", "Microservices", "System Design"],
+    "description": "Designing scalable cloud infrastructure and distributed systems"
+  },
+  {
+    "id": "role_mle_01",
+    "role_title": "Machine Learning Engineer",
+    "required_skills": ["Python", "TensorFlow", "Docker", "MLOps", "APIs"],
+    "description": "Deploying and scaling machine learning models in production environments"
+  },
+  {
+    "id": "role_qa_01",
+    "role_title": "QA Engineer",
+    "required_skills": ["Selenium", "Jest", "Cypress", "Test Automation", "Bug Tracking"],
+    "description": "Ensuring software quality through comprehensive testing strategies"
   }
 ]
