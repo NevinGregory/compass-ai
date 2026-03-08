@@ -21,7 +21,7 @@ export async function analyzeResume(
   const roleTemplate = jobTemplates.find(t => t.role_title === targetRole)
   const requiredSkills = roleTemplate?.required_skills || []
 
-  const hasApiKey = Boolean(import.meta.env.OPENAI_API_KEY)
+  const hasApiKey = Boolean(import.meta.env.VITE_OPENAI_API_KEY)
 
   // Try AI first if API key exists
   if (hasApiKey) {
