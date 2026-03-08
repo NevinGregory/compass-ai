@@ -48,9 +48,24 @@ export async function analyzeResume(
         usedFallback: false
       }
     } catch (error) {
-      console.error('AI extraction failed, falling back to regex:', error)
+      // Enhanced error logging based on error type
+      if (error instanceof Error) {
+        if (error.message.includes('API key')) {
+          console.error('Invalid API key, falling back to regex matching')
+        } else if (error.message.includes('rate limit')) {
+          console.error('Rate limit hit, falling back to regex matching')
+        } else if (error.message.includes('network') || error.message.includes('fetch')) {
+          console.error('Network error, falling back to regex matching')
+        } else {
+          console.error('AI extraction failed, falling back to regex:', error.message)
+        }
+      } else {
+        console.error('AI extraction failed with unknown error, falling back to regex')
+      }
       // Fall through to fallback
     }
+  } else {
+    console.info('No API key found, using fallback regex matching')
   }
 
   // Use fallback (regex-based) extraction

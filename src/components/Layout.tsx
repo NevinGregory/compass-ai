@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { FileSearch, BookOpen, User } from 'lucide-react'
+import Toast from './Toast'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -16,6 +17,7 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-slate-900 flex">
+      <Toast />
       {/* Sidebar */}
       <aside className="w-64 bg-slate-800 border-r border-slate-700">
         <div className="p-6">
