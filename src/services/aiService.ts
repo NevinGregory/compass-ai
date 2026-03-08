@@ -1,10 +1,5 @@
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true
-})
-
 interface ExtractedSkills {
   languages: string[]
   tools: string[]
@@ -15,6 +10,11 @@ export async function extractSkillsWithAI(
   resumeText: string,
   targetRole: string
 ): Promise<ExtractedSkills> {
+  const openai = new OpenAI({
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    dangerouslyAllowBrowser: true
+  })
+
   try {
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
